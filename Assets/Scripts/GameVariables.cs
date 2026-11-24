@@ -39,15 +39,21 @@ public class GameVariables : MonoBehaviour
     void Update()
     {
         //recipeEnergy = recipeEnergy * recipeQuantity;
-        recipeQuantityText.text = recipeQuantityTest.ToString();
-        chickenNeededText.text = recipeQuantityText.text;
-        chickenNeededTextUI.text = chickenNeededText.text;
+        if (recipeQuantityText != null)
+        {
+            recipeQuantityText.text = recipeQuantityTest.ToString();
+            chickenNeededText.text = recipeQuantityText.text;
+            chickenNeededTextUI.text = chickenNeededText.text;
+        }
         bankBalanceApp.text = bankBalance.ToString();
         bankBalanceUI.text = bankBalance.ToString();
         energyUI.text = energy.ToString();
 
-        recipeCostLowText.text = (recipeQuantityTest * grainChickenCost).ToString();
-        recipeCostHighText.text = (recipeQuantityTest * pastureChickenCost).ToString();
+        if (recipeCostLowText != null)
+        {
+            recipeCostLowText.text = (recipeQuantityTest * grainChickenCost).ToString();
+            recipeCostHighText.text = (recipeQuantityTest * pastureChickenCost).ToString();
+        }
 
     }
 

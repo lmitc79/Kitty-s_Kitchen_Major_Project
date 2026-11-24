@@ -10,6 +10,8 @@ public class PhoneManager : MonoBehaviour
     public GameObject kitchenWarehouse;
     public GameObject renovationsWarehouse;
     public GameObject recipes;
+    public GameObject amateurRecipes;
+    public GameObject midTopBar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -79,6 +81,11 @@ public class PhoneManager : MonoBehaviour
     }
     public void OpenRecipes()
     {
+        if (midTopBar != null)
+        {
+            midTopBar.SetActive(!midTopBar.activeSelf);
+        }
+        
         if (recipes != null)
         {
             recipes.SetActive(!recipes.activeSelf);
@@ -86,6 +93,18 @@ public class PhoneManager : MonoBehaviour
         if (mainMenu != null)
         {
             mainMenu.SetActive(!mainMenu.activeSelf);
+        }
+    }
+
+    public void OpenAmateurRecipes()
+    {
+        if (amateurRecipes != null)
+        {
+            amateurRecipes.SetActive(!amateurRecipes.activeSelf);
+        }
+        if (recipes != null)
+        {
+            recipes.SetActive(!recipes.activeSelf);
         }
     }
 
